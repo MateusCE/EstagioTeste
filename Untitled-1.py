@@ -1,26 +1,18 @@
-def is_fibonacci(num):
-    if num < 0:
-        return False, []
-
-    # Inicializa a sequência de Fibonacci
-    fibonacci_sequence = [0, 1]
+def verificar_letra_a(string):
+    # Converte a string para minúsculas para contar tanto 'a' quanto 'A'
+    string_lower = string.lower()
     
-    # Gera a sequência até ultrapassar o número informado
-    while fibonacci_sequence[-1] < num:
-        fibonacci_sequence.append(fibonacci_sequence[-1] + fibonacci_sequence[-2])
+    # Conta quantas vezes a letra 'a' aparece
+    contagem = string_lower.count('a')
     
-    # Verifica se o número informado está na sequência
-    if num in fibonacci_sequence:
-        return True, fibonacci_sequence
+    # Verifica se a letra 'a' aparece e dá um retorno mais humano
+    if contagem > 0:
+        print(f"Legal! A letra 'a' aparece {contagem} vezes na sua frase.")
     else:
-        return False, fibonacci_sequence
+        print("Hmm... parece que a letra 'a' não aparece na sua frase.")
 
-# Solicita ao usuário um número
-numero_informado = int(input("Ei, me fala um número e eu te digo se ele está na sequência de Fibonacci: "))
-pertence, sequencia = is_fibonacci(numero_informado)
+# Solicita ao usuário uma string com uma abordagem mais amigável
+texto = input("Me diga uma palavra ou frase e eu vou contar quantas vezes a letra 'a' aparece: ")
 
-# Exibe o resultado de forma amigável
-if pertence:
-    print(f"Uau! O número {numero_informado} faz parte da sequência de Fibonacci. Olha só a sequência até aqui: {sequencia}")
-else:
-    print(f"Hmm... o número {numero_informado} não está na sequência de Fibonacci. Mas veja a sequência gerada: {sequencia}")
+# Chama a função para verificar a letra 'a'
+verificar_letra_a(texto)
