@@ -1,0 +1,18 @@
+
+INDICE = 12
+SOMA = 0
+K = 1
+
+
+while K < INDICE:
+    K += 1
+    SOMA += K
+
+
+resposta = int(input("Qual você acha que será o valor da variável SOMA ao final do processamento? "))
+
+
+if resposta == SOMA:
+    print("Parabéns! Você acertou. O valor de SOMA é realmente", SOMA)
+else:
+    print(f"Não foi dessa vez. O valor correto de SOMA é {SOMA}.")
